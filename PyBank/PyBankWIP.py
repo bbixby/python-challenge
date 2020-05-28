@@ -61,7 +61,7 @@ print(f'Total Months: {totalMonths}')
 print(f'Total: {totalAmount}')
 print(f'Average Change: {averageChange}')
 print(f'Greatest Increase in Profits: {changeMonth[int(maxChangeMonthIndex)]} ({maxChange})')
-print(f'Greatest Decreate in Profits: {changeMonth[int(minChangeMonthIndex)]} ({minChange})')
+print(f'Greatest Decrease in Profits: {changeMonth[int(minChangeMonthIndex)]} ({minChange})')
 
 #output the same results to a text file
 output_path = os.path.join("..", "Resources", "financialAnalysis.txt")
@@ -72,4 +72,4 @@ with open(output_path, "w", newline='') as datafile:
     f'Total: {totalAmount}\n'
     f'Average Change: {averageChange}\n'
     f'Greatest Increase in Profits: {changeMonth[int(maxChangeMonthIndex)]} ({maxChange})\n'
-    f'Greatest Decreate in Profits: {changeMonth[int(minChangeMonthIndex)]} ({minChange})', file=datafile)
+    f'Greatest Decrease in Profits: {changeMonth[int(minChangeMonthIndex)]} ({minChange})', file=datafile)

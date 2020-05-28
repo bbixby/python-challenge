@@ -5,7 +5,6 @@ import csv
 election_csv = os.path.join("..", "..", "election_data.csv")
 #create votes dictionary
 votes = {}
-#votes = dict()
 #open and read csv
 with open(election_csv) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
@@ -30,23 +29,27 @@ values = votes.values()
 voteTotal = sum(values)
 #print (voteTotal)
 
-#create the winners, percent, and votes per as a list
-#lst=[]
-#for key, value in votes.items():
-    #lst.append(f"{key}: {value / voteTotal:.3%} ({value})")
-
-#output to terminal and to text file
-#output = (
-print(f"Election Results\n")
-print(f"-------------------------\n")
-print(f"Total Votes: {voteTotal}\n")
-print(f"-------------------------\n")
-    #f"{lst}"
+#print to terminal
+print(f"Election Results")
+print(f"-------------------------")
+print(f"Total Votes: {voteTotal}")
+print(f"-------------------------")
 for key, value in votes.items():
     print(f"{key}: {value / voteTotal:.3%} ({value})")
-print(f"-------------------------\n")
-print(f"Winner: {max(votes, key=votes.get)}\n")
 print(f"-------------------------")
-    #)
-#print(output)
+print(f"Winner: {max(votes, key=votes.get)}")
+print(f"-------------------------")
+
+#output the same results to a text file
+output_path = os.path.join("..", "Resources", "electionResults.txt")
+with open(output_path, "w", newline='') as datafile:
+    print(f"Election Results\n"
+    f"-------------------------\n"
+    f"Total Votes: {voteTotal}\n"
+    f"-------------------------\n"
+    for key, value in votes():
+        f"{key}: {value / voteTotal:.3%} ({value})"
+    f"-------------------------\n"
+    f"Winner: {max(votes, key=votes.get)}\n"
+    f"-------------------------", file = datafile)
 
