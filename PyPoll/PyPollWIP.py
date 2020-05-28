@@ -43,13 +43,15 @@ print(f"-------------------------")
 #output the same results to a text file
 output_path = os.path.join("..", "Resources", "electionResults.txt")
 with open(output_path, "w", newline='') as datafile:
-    print(f"Election Results\n"
+    datafile.write(
+    f"Election Results\n"
     f"-------------------------\n"
     f"Total Votes: {voteTotal}\n"
-    f"-------------------------\n"
-    for key, value in votes():
-        f"{key}: {value / voteTotal:.3%} ({value})"
-    f"-------------------------\n"
+    f"-------------------------\n")
+    for key, value in votes.items():
+        datafile.write(f"{key}: {value / voteTotal:.3%} ({value})\n")
+    datafile.write(f"-------------------------\n"
     f"Winner: {max(votes, key=votes.get)}\n"
-    f"-------------------------", file = datafile)
+    f"-------------------------")
 
+# print(output)
