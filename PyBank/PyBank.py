@@ -64,7 +64,7 @@ print(f'Greatest Increase in Profits: {changeMonth[int(maxChangeMonthIndex)]} ({
 print(f'Greatest Decrease in Profits: {changeMonth[int(minChangeMonthIndex)]} ({minChange})')
 
 #output the same results to a text file
-output_path = os.path.join("..", "Resources", "financialAnalysis.txt")
+output_path = os.path.join("..", "analysis", "financialAnalysis.txt")
 with open(output_path, "w", newline='') as datafile:
     print('Financial Analysis\n'
     '----------------------------\n'

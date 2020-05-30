@@ -41,17 +41,18 @@ print(f"Winner: {max(votes, key=votes.get)}")
 print(f"-------------------------")
 
 #output the same results to a text file
-output_path = os.path.join("..", "Resources", "electionResults.txt")
+output_path = os.path.join("..", "analysis", "electionResults.txt")
 with open(output_path, "w", newline='') as datafile:
     datafile.write(
     f"Election Results\n"
     f"-------------------------\n"
     f"Total Votes: {voteTotal}\n"
     f"-------------------------\n")
+    #note for loop has to be left out of datafile.write parenthesis to run
     for key, value in votes.items():
+        #add a datafile.write line for results alone
         datafile.write(f"{key}: {value / voteTotal:.3%} ({value})\n")
     datafile.write(f"-------------------------\n"
     f"Winner: {max(votes, key=votes.get)}\n"
     f"-------------------------")
 
-# print(output)
